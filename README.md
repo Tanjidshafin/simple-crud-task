@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="screenshots/app-showcase.png" alt="EmployWise Application" width="100%" />
+  <img src="https://imgur.com/a/ft8vQbg.jpg" alt="EmployWise Application" width="100%" />
 </div>
 
 <div align="center">
