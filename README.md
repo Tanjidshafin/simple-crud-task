@@ -237,21 +237,21 @@ _The application supports multiple view options to suit your preference._
 
 ```plaintext
 src/
-├── api/
-│   ├── axiosInstance.js  # Axios configuration with interceptors
-│   └── userService.js    # API service functions
+├── hooks/
+│   ├── Link.jsx  # Axios configuration with interceptors
+│   └── ApiCalls.jsx    # API service functions
 ├── components/
 │   ├── Navbar.jsx        # Application navigation bar
 │   ├── Pagination.jsx    # Pagination controls
 │   ├── SearchBar.jsx     # Search functionality
 │   ├── SkeletonLoader.jsx # Loading placeholders
-│   └── UserCard.jsx      # User display card
+│   └── User.jsx      # User display card
 ├── context/
-│   └── AuthContext.jsx   # Authentication context
+│   └── AppContext.jsx   # Application Context (Auth)
 ├── pages/
 │   ├── EditUser.jsx      # Edit user page
 │   ├── Login.jsx         # Login page
-│   └── UsersList.jsx     # Users list page
+│   └── Users.jsx     # Users list page
 ├── App.jsx               # Main application component
 └── index.jsx             # Application entry point
 ```
@@ -262,13 +262,13 @@ src/
 
 This project integrates with the [Reqres](https://reqres.in/) API for user management operations:
 
-| Endpoint                 | Method   | Description                 | Request Body                                                              |
-| ------------------------ | -------- | --------------------------- | ------------------------------------------------------------------------- |
-| `/api/login`             | `POST`   | Authenticate user           | `json {"email": "string", "password": "string"}`                          |
-| `/api/users?page={page}` | `GET`    | Get paginated list of users | N/A                                                                       |
-| `/api/users/{id}`        | `GET`    | Get a single user           | N/A                                                                       |
-| `/api/users/{id}`        | `PUT`    | Update a user               | `json {"first_name": "string", "last_name": "string", "email": "string"}` |
-| `/api/users/{id}`        | `DELETE` | Delete a user               | N/A                                                                       |
+| Endpoint             | Method   | Description                 | Request Body                                                              |
+| -------------------- | -------- | --------------------------- | ------------------------------------------------------------------------- |
+| `/login`             | `POST`   | Authenticate user           | `json {"email": "string", "password": "string"}`                          |
+| `/users?page={page}` | `GET`    | Get paginated list of users | N/A                                                                       |
+| `/users/{id}`        | `GET`    | Get a single user           | N/A                                                                       |
+| `/users/{id}`        | `PUT`    | Update a user               | `json {"first_name": "string", "last_name": "string", "email": "string"}` |
+| `/users/{id}`        | `DELETE` | Delete a user               | N/A                                                                       |
 
 ## 🤝 Contributing
 
@@ -292,16 +292,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Framer Motion](https://www.framer.com/motion/) for the animation library
 
 <div align="center">
-<img src="screenshots/footer-banner.png" alt="EmployWise Footer" width="100%" />
-
-<p>Made with ❤️ by [Your Name]</p>  
-<a href="https://github.com/yourusername">
-  <img src="https://img.shields.io/github/followers/yourusername?label=Follow&style=social" alt="GitHub followers" />
+<p>Made with ❤️ by Tanjid Karim Shafin</p>  
+<a href="https://github.com/Tanjidshafin">
+  <img src="https://img.shields.io/github/followers/Tanjidshafin?label=Follow&style=social" alt="GitHub followers" />
 </a>
 
 <br /><br />
-
 <a href="#-usage-guide">Back to top ⬆️</a>
 
 </div>
-```
