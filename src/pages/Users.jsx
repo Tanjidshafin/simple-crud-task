@@ -4,27 +4,26 @@ import { useContext, useState } from "react"
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "react-router"
 import { toast } from "react-hot-toast"
+import { motion, AnimatePresence } from "framer-motion"
 import User from "../components/User"
 import Pagination from "../components/Pagination"
 import SearchBar from "../components/SearchBar"
 import Navbar from "../components/Navbar"
-import { deleteUser, getUsers } from "../hooks/ApiCalls"
+import { SkeletonGrid } from "../components/SkeletonLoader"
 import { AppContext } from "../context/AppContext"
+import { deleteUser, getUsers } from "../hooks/ApiCalls"
 
-const Users = () => {
+const UsersList = () => {
     const [page, setPage] = useState(1)
     const [searchTerm, setSearchTerm] = useState("")
     const navigate = useNavigate()
     const { logout } = useContext(AppContext)
     const queryClient = useQueryClient()
 
-    // Fetch users with React Query
-    const { data, isLoading, isError } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ["users", page],
         queryFn: () => getUsers(page),
     })
-
-    // Delete user mutation
     const deleteMutation = useMutation({
         mutationFn: deleteUser,
         onSuccess: () => {
@@ -35,7 +34,6 @@ const Users = () => {
             toast.error("Failed to delete user")
         },
     })
-
     const handleLogout = () => {
         logout()
         navigate("/login")
@@ -50,8 +48,6 @@ const Users = () => {
             deleteMutation.mutate(userId)
         }
     }
-
-    // Filter users based on search term
     const filteredUsers =
         data?.data.filter((user) => {
             if (!searchTerm) return true
@@ -60,39 +56,78 @@ const Users = () => {
         }) || []
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
             <Navbar onLogout={handleLogout} />
-
             <div className="container mx-auto px-4 py-8">
-                <div className="flex justify-between items-center mb-6">
-                    <h1 className="text-2xl font-bold text-gray-800">Users List</h1>
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4"
+                >
+                    <h1 className="text-3xl font-bold text-teal-700">Users List</h1>
                     <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-                </div>
+                </motion.div>
 
                 {isLoading ? (
-                    <div className="flex justify-center items-center h-64">
-                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-                    </div>
-                ) : isError ? (
-                    <div className="text-center text-red-500 py-8">Error loading users. Please try again.</div>
+                    <SkeletonGrid />
                 ) : (
                     <>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {filteredUsers.map((user) => (
-                                <User
-                                    key={user.id}
-                                    user={user}
-                                    onEdit={() => handleEditUser(user.id)}
-                                    onDelete={() => handleDeleteUser(user.id)}
-                                />
-                            ))}
-                        </div>
-
-                        {filteredUsers.length === 0 && (
-                            <div className="text-center py-8 text-gray-500">No users found matching your search.</div>
+                        <AnimatePresence>
+                            {filteredUsers.length > 0 ? (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                                >
+                                    {filteredUsers.map((user, index) => (
+                                        <motion.div
+                                            key={user.id}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -20 }}
+                                            transition={{
+                                                duration: 0.4,
+                                                delay: index * 0.1,
+                                                ease: "easeOut",
+                                            }}
+                                        >
+                                            <User
+                                                user={user}
+                                                onEdit={() => handleEditUser(user.id)}
+                                                onDelete={() => handleDeleteUser(user.id)}
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="flex flex-col items-center justify-center py-16 bg-white rounded-lg shadow-md"
+                                >
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"
+                                        alt="No results"
+                                        className="w-32 h-32 mb-4 rounded-full object-cover opacity-50"
+                                    />
+                                    <h3 className="text-xl font-semibold text-gray-700 mb-2">No users found</h3>
+                                    <p className="text-gray-500">We couldn't find any users matching your search criteria.</p>
+                                    {searchTerm && (
+                                        <button
+                                            onClick={() => setSearchTerm("")}
+                                            className="mt-4 px-4 py-2 bg-teal-500 text-white rounded-md hover:bg-teal-600 transition-colors"
+                                        >
+                                            Clear Search
+                                        </button>
+                                    )}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                        {!searchTerm && filteredUsers.length > 0 && (
+                            <Pagination currentPage={page} totalPages={data.total_pages} onPageChange={setPage} />
                         )}
-
-                        {!searchTerm && <Pagination currentPage={page} totalPages={data.total_pages} onPageChange={setPage} />}
                     </>
                 )}
             </div>
@@ -100,5 +135,5 @@ const Users = () => {
     )
 }
 
-export default Users
+export default UsersList
 
