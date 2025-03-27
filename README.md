@@ -167,16 +167,16 @@ npm install
 npm start
 ```
 
-1. Move the app demo screenshot to the very top, making it full-width
-2. Place the title and badges below the screenshot
-3. Reorganize the content to flow naturally from this new starting point
-4. Keep all the unique design elements from the previous version
-5. Ensure the visual hierarchy makes sense with this new layout
+Here’s the corrected and properly formatted README file in Markdown:
+
+````md
+# EmployWise User Management
+
 Visit `http://localhost:3000` in your browser to see the application.
 
-`<br />`## 📱 Usage Guide
+## 📱 Usage Guide
 
-`<table>
+<table>
 
   <tr>
     <td width="50%" valign="top">
@@ -185,32 +185,35 @@ Visit `http://localhost:3000` in your browser to see the application.
       <ul>
         <li><strong>Email:</strong> eve.holt@reqres.in</li>
         <li><strong>Password:</strong> cityslicka</li>
-      </ul>````plaintext
-  <h3>🔍 Search & Filter</h3>
-  <p>Use the search bar to instantly filter users by name or email. Results update in real-time as you type.</p>
-  
-  <h3>📄 Pagination</h3>
-  <p>Navigate between pages using the intuitive pagination controls at the bottom of the user list.</p>
-</td>
-<td width="50%" valign="top">
-  <h3>✏️ Edit Users</h3>
-  <p>Click the edit icon <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/edit.svg" width="16" height="16" alt="Edit" style="display:inline; vertical-align:middle" /> on any user card to modify their details. All fields are validated before submission.</p>
-  
-  <h3>🗑️ Delete Users</h3>
-  <p>Remove users by clicking the delete icon <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/trash-2.svg" width="16" height="16" alt="Delete" style="display:inline; vertical-align:middle" />. A confirmation prompt will appear before deletion.</p>
-  
-  <h3>🚪 Logout</h3>
-  <p>End your session by clicking the logout button in the navigation bar. You'll be redirected to the login page.</p>
-</td>
-```
+      </ul>
 
-` </tr>
+      <h3>🔍 Search & Filter</h3>
+      <p>Use the search bar to instantly filter users by name or email. Results update in real-time as you type.</p>
 
-</table>``<br />`## 🎬 View Options
+      <h3>📄 Pagination</h3>
+      <p>Navigate between pages using the intuitive pagination controls at the bottom of the user list.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>✏️ Edit Users</h3>
+      <p>Click the edit icon <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/edit.svg" width="16" height="16" alt="Edit" style="display:inline; vertical-align:middle" /> on any user card to modify their details. All fields are validated before submission.</p>
 
-`<div align="center">
+      <h3>🗑️ Delete Users</h3>
+      <p>Remove users by clicking the delete icon <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/trash-2.svg" width="16" height="16" alt="Delete" style="display:inline; vertical-align:middle" />. A confirmation prompt will appear before deletion.</p>
 
-  <h3>Choose Your Preferred Layout Style</h3>``  <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+      <h3>🚪 Logout</h3>
+      <p>End your session by clicking the logout button in the navigation bar. You'll be redirected to the login page.</p>
+    </td>
+
+  </tr>
+
+</table>
+
+## 🎬 View Options
+
+<div align="center">
+
+  <h3>Choose Your Preferred Layout Style</h3>  
+  <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
     <div style="flex: 1; min-width: 250px; max-width: 350px;">
       <img src="screenshots/layout-option-1.png" alt="Card Layout" width="100%" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
       <p><strong>Card Layout</strong> - Modern card-based design</p>
@@ -223,10 +226,14 @@ Visit `http://localhost:3000` in your browser to see the application.
       <img src="screenshots/layout-option-3.png" alt="Grid Layout" width="100%" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
       <p><strong>Grid Layout</strong> - Compact grid view</p>
     </div>
-  </div>``  <p><em>The application supports multiple view options to suit your preference</em></p>
-</div>``<br />`## 🛠️ Technology Stack
+  </div>  
+  <p><em>The application supports multiple view options to suit your preference</em></p>
 
-`<div align="center">
+</div>
+
+## 🛠️ Technology Stack
+
+<div align="center">
 
   <table>
     <tr>
@@ -257,11 +264,16 @@ Visit `http://localhost:3000` in your browser to see the application.
       </td>
     </tr>
   </table>
-</div>``<br />`## 📁 Project Structure
 
-`<details>
+</div>
 
-  <summary><strong>View Project Structure</strong></summary>````plaintext
+## 📁 Project Structure
+
+<details>
+
+  <summary><strong>View Project Structure</strong></summary>
+
+```plaintext
 src/
 ├── api/
 │   ├── axiosInstance.js  # Axios configuration with interceptors
@@ -281,12 +293,15 @@ src/
 ├── App.jsx               # Main application component
 └── index.jsx             # Application entry point
 ```
+````
 
-` </details>``<br /> `## 🔌 API Integration
+</details>
+
+## 🔌 API Integration
 
 This project integrates with the [Reqres](https://reqres.in/) API for user management operations:
 
-`<table>
+<table>
 
   <tr>
     <th>Endpoint</th>
@@ -331,7 +346,10 @@ This project integrates with the [Reqres](https://reqres.in/) API for user manag
     <td>Delete a user</td>
     <td>N/A</td>
   </tr>
-</table>``<br />`## 🤝 Contributing
+
+</table>
+
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -341,23 +359,28 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-`<br />`## 📝 License
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-`<br />`## 🙏 Acknowledgements
+## 🙏 Acknowledgements
 
 - [Reqres](https://reqres.in/) for providing the API
 - [Lucide React](https://lucide.dev/) for the beautiful icons
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
 - [Framer Motion](https://www.framer.com/motion/) for the animation library
 
-`<br />``<div align="center">
+<div align="center">
 <img src="screenshots/footer-banner.png" alt="EmployWise Footer" width="100%" />
 
-  <p>Made with ❤️ by [Your Name]</p>``  <a href="https://github.com/yourusername">
+  <p>Made with ❤️ by [Your Name]</p>  
+  <a href="https://github.com/yourusername">
     <img src="https://img.shields.io/github/followers/yourusername?label=Follow&style=social" alt="GitHub followers" />
-  </a>``  <br />
-  <br />``<a href="#-employwise-user-management">`Back to top ⬆️`</a>`
+  </a>
 
-`</div>
+<br /><br />
+
+<a href="#-employwise-user-management">Back to top ⬆️</a>
+
+</div>
+```
