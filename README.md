@@ -105,18 +105,18 @@
 <div align="center">
   <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
     <div style="flex: 1; min-width: 300px; max-width: 500px;">
-      <img src="screenshots/login-screen.png" alt="Login Screen" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="https://i.imgur.com/mEkuXiF.png" alt="Login Screen" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
       <p><em>Secure login with a clean, modern interface</em></p>
     </div>
     <div style="flex: 1; min-width: 300px; max-width: 500px;">
-      <img src="screenshots/users-list.png" alt="Users List" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="https://i.imgur.com/BOC6NZ3.png" alt="Users List" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
       <p><em>Beautiful card layouts with search functionality</em></p>
     </div>
   </div>
   
   <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
     <div style="flex: 1; min-width: 300px; max-width: 500px;">
-      <img src="screenshots/edit-user.png" alt="Edit User" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <img src="https://i.imgur.com/owEaSwq.png" alt="Edit User" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
       <p><em>Intuitive user editing interface</em></p>
     </div>
   </div>
@@ -137,7 +137,7 @@
       <p>Instant visual feedback for all user actions with toast notifications and smooth animations.</p>
     </td>
     <td width="40%">
-      <img src="screenshots/features-showcase.png" alt="Features Showcase" width="100%" style="border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" />
+      <img src="https://i.imgur.com/6EGEEHy.png" alt="Features Showcase" width="100%" style="border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" />
     </td>
   </tr>
 </table>
@@ -197,24 +197,6 @@ Remove users by clicking the delete icon ![Delete](https://raw.githubusercontent
 ### 🚪 Logout
 
 End your session by clicking the logout button in the navigation bar. You'll be redirected to the login page.
-
-## 🎬 View Options
-
-<div align="center">
-
-### Choose Your Preferred Layout Style
-
-<img src="screenshots/layout-option-1.png" alt="Card Layout" width="300" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
-  
-**Card Layout** - Modern card-based design
-
-<img src="screenshots/layout-option-3.png" alt="Grid Layout" width="300" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
-
-**Grid Layout** - Compact grid view
-
-_The application supports multiple view options to suit your preference._
-
-</div>
 
 ## 🛠️ Technology Stack
 
