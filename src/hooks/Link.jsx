@@ -1,9 +1,7 @@
 import axios from "axios"
-import { useNavigate } from "react-router"
 const link = axios.create({
     baseURL: "https://reqres.in/api",
 })
-const navigate = useNavigate()
 // Add a request interceptor to include the auth token
 link.interceptors.request.use(
     (config) => {
@@ -26,7 +24,7 @@ link.interceptors.response.use(
     (error) => {
         if (error.response && error.response.status === 401) {
             localStorage.removeItem("token")
-            navigate("/login")
+            window.location.href = "/login"
         }
         return Promise.reject(error)
     },
