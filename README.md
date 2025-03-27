@@ -166,62 +166,53 @@ npm install
 # Start development server
 npm start
 ```
+
 Visit `http://localhost:3000` in your browser to see the application.
 
 ## 📱 Usage Guide
 
-<table>
+### 🔑 Login
 
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🔑 Login</h3>
-      <p>Use these credentials to access the system:</p>
-      <ul>
-        <li><strong>Email:</strong> eve.holt@reqres.in</li>
-        <li><strong>Password:</strong> cityslicka</li>
-      </ul>
+Use these credentials to access the system:
 
-      <h3>🔍 Search & Filter</h3>
-      <p>Use the search bar to instantly filter users by name or email. Results update in real-time as you type.</p>
+- **Email:** eve.holt@reqres.in
+- **Password:** cityslicka
 
-      <h3>📄 Pagination</h3>
-      <p>Navigate between pages using the intuitive pagination controls at the bottom of the user list.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>✏️ Edit Users</h3>
-      <p>Click the edit icon <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/edit.svg" width="16" height="16" alt="Edit" style="display:inline; vertical-align:middle" /> on any user card to modify their details. All fields are validated before submission.</p>
+### 🔍 Search & Filter
 
-      <h3>🗑️ Delete Users</h3>
-      <p>Remove users by clicking the delete icon <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/trash-2.svg" width="16" height="16" alt="Delete" style="display:inline; vertical-align:middle" />. A confirmation prompt will appear before deletion.</p>
+Use the search bar to instantly filter users by name or email. Results update in real-time as you type.
 
-      <h3>🚪 Logout</h3>
-      <p>End your session by clicking the logout button in the navigation bar. You'll be redirected to the login page.</p>
-    </td>
+### 📄 Pagination
 
-  </tr>
+Navigate between pages using the intuitive pagination controls at the bottom of the user list.
 
-</table>
+### ✏️ Edit Users
+
+Click the edit icon ![Edit](https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/edit.svg) on any user card to modify their details. All fields are validated before submission.
+
+### 🗑️ Delete Users
+
+Remove users by clicking the delete icon ![Delete](https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/trash-2.svg). A confirmation prompt will appear before deletion.
+
+### 🚪 Logout
+
+End your session by clicking the logout button in the navigation bar. You'll be redirected to the login page.
 
 ## 🎬 View Options
 
 <div align="center">
 
-  <h3>Choose Your Preferred Layout Style</h3>  
-  <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-    <div style="flex: 1; min-width: 250px; max-width: 350px;">
-      <img src="screenshots/layout-option-1.png" alt="Card Layout" width="100%" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
-      <p><strong>Card Layout</strong> - Modern card-based design</p>
-    </div>
-    <div style="flex: 1; min-width: 250px; max-width: 350px;">
-      <img src="screenshots/layout-option-2.png" alt="Table Layout" width="100%" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
-      <p><strong>Table Layout</strong> - Traditional data table view</p>
-    </div>
-    <div style="flex: 1; min-width: 250px; max-width: 350px;">
-      <img src="screenshots/layout-option-3.png" alt="Grid Layout" width="100%" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
-      <p><strong>Grid Layout</strong> - Compact grid view</p>
-    </div>
-  </div>  
-  <p><em>The application supports multiple view options to suit your preference</em></p>
+### Choose Your Preferred Layout Style
+
+<img src="screenshots/layout-option-1.png" alt="Card Layout" width="300" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
+  
+**Card Layout** - Modern card-based design
+
+<img src="screenshots/layout-option-3.png" alt="Grid Layout" width="300" style="border-radius: 8px; border: 1px solid #e2e8f0;" />
+
+**Grid Layout** - Compact grid view
+
+_The application supports multiple view options to suit your preference._
 
 </div>
 
@@ -229,42 +220,19 @@ Visit `http://localhost:3000` in your browser to see the application.
 
 <div align="center">
 
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" width="60" alt="React" />
-        <br />
-        <b>React</b>
-      </td>
-      <td align="center">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tailwind/tailwind.png" width="60" alt="Tailwind CSS" />
-        <br />
-        <b>Tailwind CSS</b>
-      </td>
-      <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/47919478" width="60" alt="Framer Motion" />
-        <br />
-        <b>Framer Motion</b>
-      </td>
-      <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/72518640" width="60" alt="TanStack Query" />
-        <br />
-        <b>TanStack Query</b>
-      </td>
-      <td align="center">
-        <img src="https://axios-http.com/assets/logo.svg" width="60" alt="Axios" />
-        <br />
-        <b>Axios</b>
-      </td>
-    </tr>
-  </table>
+| Technology         | Logo                                                                                                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **React**          | <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" width="60" alt="React" />              |
+| **Tailwind CSS**   | <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tailwind/tailwind.png" width="60" alt="Tailwind CSS" /> |
+| **Framer Motion**  | <img src="https://avatars.githubusercontent.com/u/47919478" width="60" alt="Framer Motion" />                                                                      |
+| **TanStack Query** | <img src="https://avatars.githubusercontent.com/u/72518640" width="60" alt="TanStack Query" />                                                                     |
+| **Axios**          | <img src="https://axios-http.com/assets/logo.svg" width="60" alt="Axios" />                                                                                        |
 
 </div>
 
 ## 📁 Project Structure
 
 <details>
-
   <summary><strong>View Project Structure</strong></summary>
 
 ```plaintext
@@ -287,7 +255,6 @@ src/
 ├── App.jsx               # Main application component
 └── index.jsx             # Application entry point
 ```
-````
 
 </details>
 
@@ -295,53 +262,13 @@ src/
 
 This project integrates with the [Reqres](https://reqres.in/) API for user management operations:
 
-<table>
-
-  <tr>
-    <th>Endpoint</th>
-    <th>Method</th>
-    <th>Description</th>
-    <th>Request Body</th>
-  </tr>
-  <tr>
-    <td><code>/api/login</code></td>
-    <td>POST</td>
-    <td>Authenticate user</td>
-    <td><pre>{
-  "email": "string",
-  "password": "string"
-}</pre></td>
-  </tr>
-  <tr>
-    <td><code>/api/users?page={page}</code></td>
-    <td>GET</td>
-    <td>Get paginated list of users</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td><code>/api/users/{id}</code></td>
-    <td>GET</td>
-    <td>Get a single user</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td><code>/api/users/{id}</code></td>
-    <td>PUT</td>
-    <td>Update a user</td>
-    <td><pre>{
-  "first_name": "string",
-  "last_name": "string",
-  "email": "string"
-}</pre></td>
-  </tr>
-  <tr>
-    <td><code>/api/users/{id}</code></td>
-    <td>DELETE</td>
-    <td>Delete a user</td>
-    <td>N/A</td>
-  </tr>
-
-</table>
+| Endpoint                 | Method   | Description                 | Request Body                                                              |
+| ------------------------ | -------- | --------------------------- | ------------------------------------------------------------------------- |
+| `/api/login`             | `POST`   | Authenticate user           | `json {"email": "string", "password": "string"}`                          |
+| `/api/users?page={page}` | `GET`    | Get paginated list of users | N/A                                                                       |
+| `/api/users/{id}`        | `GET`    | Get a single user           | N/A                                                                       |
+| `/api/users/{id}`        | `PUT`    | Update a user               | `json {"first_name": "string", "last_name": "string", "email": "string"}` |
+| `/api/users/{id}`        | `DELETE` | Delete a user               | N/A                                                                       |
 
 ## 🤝 Contributing
 
@@ -367,14 +294,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
 <img src="screenshots/footer-banner.png" alt="EmployWise Footer" width="100%" />
 
-  <p>Made with ❤️ by [Your Name]</p>  
-  <a href="https://github.com/yourusername">
-    <img src="https://img.shields.io/github/followers/yourusername?label=Follow&style=social" alt="GitHub followers" />
-  </a>
+<p>Made with ❤️ by [Your Name]</p>  
+<a href="https://github.com/yourusername">
+  <img src="https://img.shields.io/github/followers/yourusername?label=Follow&style=social" alt="GitHub followers" />
+</a>
 
 <br /><br />
 
-<a href="#-employwise-user-management">Back to top ⬆️</a>
+<a href="#-usage-guide">Back to top ⬆️</a>
 
 </div>
 ```
