@@ -14,21 +14,16 @@ const EditUser = () => {
     const navigate = useNavigate()
     const { logout } = useContext(AppContext)
     const queryClient = useQueryClient()
-
     const [formData, setFormData] = useState({
         first_name: "",
         last_name: "",
         email: "",
         avatar: "",
     })
-
-    // Fetch user data
-    const { data, isLoading, isError } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ["user", id],
         queryFn: () => getUserById(id),
     })
-
-    // Update user mutation
     const updateMutation = useMutation({
         mutationFn: updateUser,
         onSuccess: () => {
@@ -40,8 +35,6 @@ const EditUser = () => {
             toast.error("Failed to update user")
         },
     })
-
-    // Set form data when user data is loaded
     useEffect(() => {
         if (data?.data) {
             setFormData({
@@ -63,8 +56,6 @@ const EditUser = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        // Basic validation
         if (!formData.first_name.trim() || !formData.last_name.trim() || !formData.email.trim()) {
             toast.error("Please fill in all required fields")
             return
@@ -99,43 +90,9 @@ const EditUser = () => {
             </div>
         )
     }
-
-    if (isError) {
-        return (
-            <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
-                <Navbar onLogout={handleLogout} />
-                <div className="container mx-auto px-4 py-8">
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8 text-center"
-                    >
-                        <h3 className="text-xl font-bold text-red-500 mb-2">Error Loading User</h3>
-                        <p className="text-gray-600 mb-4">We couldn't load the user data. Please try again later.</p>
-                        <div className="flex justify-center gap-4">
-                            <button
-                                onClick={() => queryClient.invalidateQueries({ queryKey: ["user", id] })}
-                                className="px-4 py-2 bg-teal-500 text-white rounded-md hover:bg-teal-600 transition-colors"
-                            >
-                                Retry
-                            </button>
-                            <button
-                                onClick={() => navigate("/")}
-                                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors"
-                            >
-                                Back to Users
-                            </button>
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
             <Navbar onLogout={handleLogout} />
-
             <div className="container mx-auto px-4 py-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -220,8 +177,9 @@ const EditUser = () => {
                                     whileTap={{ scale: 0.98 }}
                                     type="submit"
                                     disabled={updateMutation.isPending}
-                                    className="flex-1 bg-teal-500 text-white py-3 px-4 rounded-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all disabled:opacity-70 shadow-md"
+                                    className="flex-1 flex justify-center items-center gap-2 bg-teal-500 text-white py-3 px-4 rounded-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all disabled:opacity-70 shadow-md"
                                 >
+                                    {updateMutation.isPending ? (<span className="loading loading-spinner loading-xs"></span>) : ""}
                                     {updateMutation.isPending ? "Updating..." : "Update User"}
                                 </motion.button>
 

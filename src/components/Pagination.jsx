@@ -52,7 +52,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             </motion.button>
           ))}
         </div>
-
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

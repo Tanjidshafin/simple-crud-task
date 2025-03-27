@@ -23,7 +23,7 @@ const User = ({ user, onEdit, onDelete }) => {
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        src={user.avatar || "/placeholder.svg"}
+                        src={user.avatar}
                         alt={`${user.first_name} ${user.last_name}`}
                         className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md"
                     />
