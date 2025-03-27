@@ -166,12 +166,6 @@ npm install
 # Start development server
 npm start
 ```
-
-Here’s the corrected and properly formatted README file in Markdown:
-
-````md
-# EmployWise User Management
-
 Visit `http://localhost:3000` in your browser to see the application.
 
 ## 📱 Usage Guide
